@@ -44,8 +44,23 @@ class PaintApp:
         self.active_button.config(relief=tk.SUNKEN)
         self.draw_tool = 'polyline'
 
+    def use_line(self):
+        self.activate_button(self.line_btn, 'line')
+
+    def use_polyline(self):
+        self.activate_button(self.polyline_btn, 'polyline')
+
+    def use_rectangle(self):
+        self.activate_button(self.rectangle_btn, 'rectangle')
+
     def choose_color(self):
         self.color = colorchooser.askcolor(color=self.color)[1]
+
+    def activate_button(self, button, tool=None):
+        self.active_button.config(relief=tk.RAISED)
+        button.config(relief=tk.SUNKEN)
+        self.active_button = button
+        self.draw_tool = tool
 
     def start_pos(self, event):
         self.last_x, self.last_y = event.x, event.y
