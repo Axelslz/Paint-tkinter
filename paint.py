@@ -53,6 +53,12 @@ class PaintApp:
     def use_rectangle(self):
         self.activate_button(self.rectangle_btn, 'rectangle')
 
+    def use_circle(self):
+        self.activate_button(self.circle_btn, 'circle')
+
+    def use_eraser(self):
+        self.activate_button(self.eraser_btn, 'eraser')
+
     def choose_color(self):
         self.color = colorchooser.askcolor(color=self.color)[1]
 
