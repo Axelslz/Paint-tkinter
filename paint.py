@@ -6,7 +6,7 @@ import numpy as np
 class PaintApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Paint App con Tkinter y OpenCV")
+        self.root.title("Paint Tkinter y OpenCV")
 
         self.color = 'black'
         self.eraser_color = 'white'
@@ -75,7 +75,7 @@ class PaintApp:
         x, y = event.x, event.y
         if self.draw_tool == 'line':
             self.canvas.create_line((self.last_x, self.last_y, x, y), fill=self.color)
-            self.last_x, self.last_y = x, y  # Uncomment to draw continuous lines
+            self.last_x, self.last_y = x, y 
         elif self.draw_tool == 'polyline':
             self.canvas.create_line((self.last_x, self.last_y, x, y), fill=self.color)
             self.last_x, self.last_y = x, y
